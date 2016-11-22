@@ -29,15 +29,15 @@ namespace Tennis
         {
             if (this.player1.Name == playerName)
             {
-                this.player1.Score += 1;
+                this.player1.Score++;
             }
             else if (this.player2.Name == playerName)
             {
-                this.player2.Score += 1;
+                this.player2.Score++;
             }
             else
             {
-                throw new System.ArgumentOutOfRangeException("Unable to assign point. Invalid player name: " + playerName);
+                throw new ArgumentOutOfRangeException($"Unable to assign point. Invalid player name: {playerName}.");
             }
         }
 
