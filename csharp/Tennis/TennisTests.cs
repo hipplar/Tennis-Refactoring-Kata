@@ -70,6 +70,13 @@ namespace Tennis
             CheckAllScores(game);
         }
 
+        [Test]
+        public void CheckRobsTennisGame()
+        {
+            ITennisGame game = new RobsTennisGame("player1", "player2");
+            this.CheckAllScores(game);
+        }
+
         private void CheckAllScores(ITennisGame game)
         {
             var highestScore = Math.Max(this.player1Score, this.player2Score);
@@ -80,6 +87,7 @@ namespace Tennis
                 if (i < this.player2Score)
                     game.WonPoint("player2");
             }
+
             Assert.AreEqual(this.expectedScore, game.GetScore());
         }
 
@@ -107,6 +115,13 @@ namespace Tennis
         {
             var game = new TennisGame3("player1", "player2");
             RealisticTennisGame(game);
+        }
+
+        [Test]
+        public void CheckRobsTennisGame()
+        {
+            ITennisGame game = new RobsTennisGame("player1", "player2");
+            this.RealisticTennisGame(game);
         }
 
         private void RealisticTennisGame(ITennisGame game)
